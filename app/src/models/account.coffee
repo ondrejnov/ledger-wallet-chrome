@@ -142,7 +142,7 @@ class @Account extends ledger.database.Model
     fees = ledger.Amount.fromSatoshi(fees)
     changeIndex = @getWalletAccount().getCurrentChangeAddressIndex()
     changePath =  @getWalletAccount().getChangeAddressPath(changeIndex)
-    changeAddress = @getWalletAccount().getCurrentChangeAddress()
+    changeAddress = @getWalletAccount().getRootAddress()
     ledger.wallet.Transaction.create(amount: amount, fees: fees, address: address, utxo: utxo, changePath: changePath, changeAddress: changeAddress, data:data, callback)
 
 

@@ -206,6 +206,9 @@ class ledger.wallet.Wallet.Account
   getCurrentChangeAddress: () -> @wallet.cache?.get(@getCurrentChangeAddressPath())
   getCurrentPublicAddress: () -> @wallet.cache?.get(@getCurrentPublicAddressPath())
 
+  getRootPublicAddressPath: () -> @getPublicAddressPath(0)
+  getRootAddress: () -> @wallet.cache?.get(@getRootPublicAddressPath())
+
   notifyPathsAsUsed: (paths) ->
     paths = [paths] unless _.isArray(paths)
     allPaths = @getAllAddressesPaths()
